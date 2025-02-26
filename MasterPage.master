@@ -1,0 +1,222 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head runat="server">
+    <title>盛世广告公司</title>
+     <link rel="stylesheet" href="css/language-selector.css" type="text/css"
+        media="all" />
+        <link rel='stylesheet'  href='css/styles.css' type='text/css'
+        media='all' />
+        <link rel='stylesheet' href='css/style.css' type='text/css'
+        media='all' />
+        <link rel='stylesheet'  href='css/jquery.fancybox.css'
+        type='text/css' media='all' />
+        <link rel='stylesheet'  href='css/swiper.css' type='text/css'
+        media='all' />
+        <link rel='stylesheet'  href='css/slicknav.min.css' type='text/css'
+        media='all' />
+        <link rel='stylesheet' href='css/font-awesome.min.css'
+        type='text/css' media='all' />
+        <script type='text/javascript' src='js/jquery.js'>
+        </script>
+        <script type='text/javascript' src='js/jquery-migrate.min.js'>
+        </script>
+</head>
+<body class="archive tax-products term-hnt term-13">
+    <form id="form1" runat="server">
+    <header id="header">
+            <div class="top-header">
+                <div class="container">
+                    
+                    <div class="fr tool">
+                        <span class="hidden-xs">
+                            <a rel="nofollow"  href="UserStReg.aspx">
+                               
+                                用户注册
+                            </a>
+                        </span>
+                        |
+                        <span>
+                            <a rel="nofollow"  href="Login.aspx">
+                                
+                                用户登录
+                            </a>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="btm-header container">
+                <div class="header-logo fl">
+                    <a class="logo" href="/" title="">
+                        
+                    </a>
+                    <h1 class="hidden-xs">
+                            盛世广告公司
+                            <br>
+                            SHENG SHI Advertising Company
+                    </h1>
+                </div>
+                <div class="contact fr hidden-xs">
+                   
+                    </i>
+                    <h1>
+                        服务热线：
+                        <a href="tel:400-8888-9999"​>
+                            400-8888-9999
+                        </a>
+                    </h1>
+                </div>
+            </div>
+            <div class="header-nav">
+                <div class="container">
+                    <ul id="menu-header" class="header-menu-con">
+                        <li class="menu-item menu-item-type-custom menu-item-object-custom current_page_item menu-item-home">
+                            <a href="Default.aspx"​>
+                                <h1>首页</h1>
+                            </a>
+                        </li>
+                       <li class="menu-item menu-item-type-taxonomy menu-item-object-products ">
+                            <a href="InformationTypeList.aspx?TypeName=企业动态"​>
+                                <h1>企业动态</h1>
+                            </a>
+                        </li>
+                      
+                        <li class="menu-item menu-item-type-taxonomy menu-item-object-products ">
+                            <a href="AnLiList.aspx"​>
+                                <h1>案例展示</h1>
+                            </a>
+                             
+                        </li>
+                        <li class="menu-item menu-item-type-taxonomy menu-item-object-products ">
+                            <a href="About.aspx?Type=联系我们"​>
+                                <h1>联系我们</h1>
+                            </a>
+                        </li>
+                        <li class="menu-item menu-item-type-taxonomy menu-item-object-products ">
+                            <a href="About.aspx?Type=公司简介"​>
+                                <h1>公司简介</h1>
+                            </a>
+                        </li>
+                          <li class="menu-item menu-item-type-taxonomy menu-item-object-products ">
+                            <a href="Search.aspx"​>
+                                <h1>案例查询</h1>
+                            </a>
+                        </li>
+                         <li class="menu-item menu-item-type-taxonomy menu-item-object-products ">
+                            <a href="ly.aspx"​>
+                                <h1>留言咨询</h1>
+                            </a>
+                        </li>
+                        
+                             <li class="menu-item menu-item-type-taxonomy menu-item-object-products ">
+                            <a href="YeWuYD.aspx"​>
+                                <h1>业务预定</h1>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </header>
+        <div class="container-fluid mini">
+        </div>
+        <section id="main">
+             
+            <nav class="crumbs">
+                <div class="container">
+                    <div >
+                        当前位置:
+                        <a href='/'>
+                            主页
+                        </a>
+                        >
+                        <a href='/a/hunnitujixie/'>
+                             <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server"></asp:ContentPlaceHolder>
+                        </a>
+                         
+                    </div>
+                </div>
+            </nav>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9 content">
+                        
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder>
+                    </div>
+                    <div class="col-md-3 sidebar hidden-xs hidden-sm">
+                        <aside class="cp-cat">
+                            <h3>
+                                案例分类
+                            </h3>
+                            <ul>
+                            
+                            <asp:DataList ID="DataList2" runat="server" ForeColor="#333333" Width="159px">
+        <ItemTemplate>
+          <li class="cat-item">  <a href='<%#Eval("id","AnLiTypeList.aspx?id={0}")%>'>
+                <%#Eval("name").ToString().Length > 15 ? CutChar(Eval("name").ToString(), 15) + "..." : Eval("name")%>
+            </a></LI>
+        </ItemTemplate>
+    </asp:DataList>
+                             
+                            </ul>
+                        </aside>
+                        <aside class="sidebar-hot">
+                            <div class="widget-title">
+                                <h2>
+                                    在线客服
+                                </h2>
+                            </div>
+                            <ul>
+                                  
+                       
+                        
+                              
+        
+                           <a target=blank href=http://wpa.qq.com/msgrd?V=3&uin=719292545&Site=点击联系客服&Menu=yes><img border="0" SRC=http://wpa.qq.com/pa?p=1:719292545:12 alt="点击联系客服"></a> 
+                            </ul>
+                        </aside>
+                        
+                    </div>
+                </div>
+            </div>
+            
+        </section>
+        
+        <section id="footer">
+            <div class="container">
+                <div class="row">
+                     
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="copyr">
+                             
+                            <p>
+                                Copyright &copy; 2018 盛世广告公司 | SHENG SHI Advertising Company 版权所有 &nbsp;&nbsp;<a href="Admin/Login.aspx" target="_blank" >管理后台</a>
+                                <a href="http://www.sise.com.cn/" target="_blank" >广州大学华软软件学院提供技术支持</a>
+                              
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        &nbsp; &nbsp;&nbsp;
+        <script type='text/javascript' src='js/scripts.js'>
+        </script>
+        <script type='text/javascript' src='js/script.min.js'>
+        </script>
+        <script type='text/javascript' src='js/wphy.js'>
+        </script>
+        <script type='text/javascript' src='js/wp-embed.min.js'>
+function IMG1_onclick() {
+
+}
+
+        </script>
+    </form>
+</body>
+</html>
